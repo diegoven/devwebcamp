@@ -2,20 +2,24 @@
     <h2 class="auth__heading"><?php echo $titulo; ?></h2>
     <p class="auth__texto">Regístrate en DevWebCamp</p>
 
-    <form action="" class="formulario">
+    <?php
+    require_once __DIR__ . "/../templates/alertas.php"
+    ?>
+
+    <form method="POST" action="/registro" class="formulario">
         <div class="formulario__campo">
             <label for="nombre" class="formulario__label">Nombre </label>
-            <input type="text" name="nombre" id="nombre" class="formulario__input" placeholder="Diego">
+            <input type="text" name="nombre" id="nombre" class="formulario__input" placeholder="Diego" value="<?php echo $usuario->nombre; ?>">
         </div>
-        
+
         <div class="formulario__campo">
             <label for="apellido" class="formulario__label">Apellido </label>
-            <input type="text" name="apellido" id="apellido" class="formulario__input" placeholder="Suárez">
+            <input type="text" name="apellido" id="apellido" class="formulario__input" placeholder="Suárez" value="<?php echo $usuario->apellido; ?>">
         </div>
-        
+
         <div class="formulario__campo">
             <label for="email" class="formulario__label">E-mail </label>
-            <input type="email" name="email" id="email" class="formulario__input" placeholder="correo@correo.com">
+            <input type="email" name="email" id="email" class="formulario__input" placeholder="correo@correo.com" value="<?php echo $usuario->email; ?>">
         </div>
 
         <div class="formulario__campo">
